@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>Makefile简单用法</title>
+    <link href="/2023/05/03/Makefile%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95-md/"/>
+    <url>/2023/05/03/Makefile%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95-md/</url>
+    
+    <content type="html"><![CDATA[<h5 id="基本示例"><a href="#基本示例" class="headerlink" title="基本示例"></a>基本示例</h5><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs stylus">calculator: <span class="hljs-selector-tag">main</span><span class="hljs-selector-class">.o</span> add<span class="hljs-selector-class">.o</span> sub<span class="hljs-selector-class">.o</span> mul<span class="hljs-selector-class">.o</span> <span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.o</span><br>    gcc <span class="hljs-selector-tag">main</span><span class="hljs-selector-class">.o</span> add<span class="hljs-selector-class">.o</span> sub<span class="hljs-selector-class">.o</span> mul<span class="hljs-selector-class">.o</span> <span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.o</span> -o calculator<br><span class="hljs-selector-tag">main</span><span class="hljs-selector-class">.o</span>:<span class="hljs-selector-tag">main</span><span class="hljs-selector-class">.c</span><br>    gcc <span class="hljs-selector-tag">main</span><span class="hljs-selector-class">.c</span> -o <span class="hljs-selector-tag">main</span>.o<br></code></pre></td></tr></table></figure><p>解释</p><figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="hljs-template-variable">&#123;目标&#125;</span><span class="language-xml">:</span><span class="hljs-template-variable">&#123;依赖&#125;</span><span class="language-xml"></span><br><span class="language-xml">    </span><span class="hljs-template-variable">&#123;要执行的命令&#125;</span><br></code></pre></td></tr></table></figure><p>依赖就是说生成这个目标所需要的文件</p><h5 id="自动变量"><a href="#自动变量" class="headerlink" title="自动变量"></a>自动变量</h5><p>$@ –&gt; 规则中的目标</p><p>$&lt; –&gt; 规则中的第一个依赖条件</p><p>$^ –&gt; 规则中的所有依赖条件</p><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-comment">#示例</span><br><span class="hljs-section">app:main.c function1.c function2.c</span><br>    gcc <span class="hljs-variable">$^</span> -o <span class="hljs-variable">$@</span><br></code></pre></td></tr></table></figure><p>解释:$^则为main.c function1.c function2.c $@则为app</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
